@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "name": "react-admin-mock",
+  "builds": [
+    { "src": "www/**/*", "use": "@now/static" },
+    { "src": "api/**/*.js", "use": "@now/node" }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "www/index.html"
+    },
+    {
+      "src": "/api/admin.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    },
+    {
+      "src": "/api/visitor.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    }
+  ]
+}
